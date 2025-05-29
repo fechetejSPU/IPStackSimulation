@@ -1,0 +1,22 @@
+Starting program...
+
+Enter your message: 
+Hello, Network!
+
+Message sent: Hello, Network!
+
+==== Sending ====
+[Application Layer] Sending: Hello, Network!
+[Transport Layer] Sending: APP_HDR|Hello, Network!
+[Network Layer] Sending: TRANS_HDR|APP_HDR|Hello, Network!
+[Link Layer] Sending: NET_HDR|TRANS_HDR|APP_HDR|Hello, Network!
+
+==== Receiving ====
+[Link Layer] Receiving: LINK_HDR|NET_HDR|TRANS_HDR|APP_HDR|Hello, Network!
+[Network Layer] Receiving: NET_HDR|TRANS_HDR|APP_HDR|Hello, Network!
+[Transport Layer] Receiving: TRANS_HDR|APP_HDR|Hello, Network!
+[Application Layer] Receiving: APP_HDR|Hello, Network!
+
+Final message received: Hello, Network!
+
+Program complete.
