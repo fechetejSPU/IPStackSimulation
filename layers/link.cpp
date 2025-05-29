@@ -14,13 +14,16 @@ bool sendLinkLayer(string outputMessage) {
     // emulates sending it "over the wire" to another host
     cout << endl;
 
-    cout << "Would you like to emulate a \"drop\", "
+    cout << "Would you like to emulate a \"drop\", \"corruption\", "
         "or let the message pass through (leave blank and hit enter)? ";
     string action;
     getline(cin, action);
     if (action == "drop") {
         cout << "Dropping packet" << endl << endl;
         return false;
+    } else if (action == "corruption") {
+        // for simplicity, corruption just replaces the last character
+        myMessage = myMessage.substr(0, myMessage.length()-1) + "0";
     }
     cout << endl;
     return receiveLinkLayer(myMessage);
