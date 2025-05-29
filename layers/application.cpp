@@ -4,26 +4,16 @@
 
 using namespace std;
 
+string applicationAddon = "APP_HDR|";
+
 void sendApplicationLayer(string outputMessage) {
-    cout << "[Application Layer] Sending: " << outputMessage << endl;
+    myMessage = applicationAddon + outputMessage;
 }
 
 void receiveApplicationLayer(string outputMessage) {
-    cout << "[Application Layer] Receiving: APP_HDR|" << outputMessage << endl;
+    size_t p = -1;
+    string tempAddon = applicationAddon;
+    while ((p = outputMessage.find(applicationAddon)) != string::npos)
+        outputMessage.replace(p, tempAddon.length(), "");
+    myMessage = outputMessage;
 }
-
-/*
-Example of how program might run.
-
-int main() {
-    string myMessage = " ";
-    cout << "Starting program..." << endl << endl;
-    cout << "Enter your message: " << endl;
-    cin >> myMessage;
-    sendApplicationLayer(myMessage);
-    receiveApplicationLayer(myMessage);
-    cout << endl << "Program complete." << endl;
-    return 0;
-}
-
-*/
