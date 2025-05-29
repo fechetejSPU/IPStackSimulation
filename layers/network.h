@@ -5,8 +5,8 @@
 using namespace std;
 
 extern string myMessage;
-void sendNetworkLayer(string outputMessage);
-void receiveNetworkLayer(string outputMessage);
+bool sendNetworkLayer(string outputMessage);
+bool receiveNetworkLayer(string outputMessage);
 
 
 #endif //NETWORK_H

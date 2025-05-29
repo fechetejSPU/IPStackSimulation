@@ -7,16 +7,26 @@ using namespace std;
 
 string linkAddon = "LINK_HDR|";
 
-void sendLinkLayer(string outputMessage) {
+bool sendLinkLayer(string outputMessage) {
     cout << "[Link Layer] Sending: " << outputMessage << endl;
     myMessage = linkAddon + outputMessage;
 
     // emulates sending it "over the wire" to another host
     cout << endl;
-    receiveLinkLayer(myMessage);
+
+    cout << "Would you like to emulate a \"drop\", "
+        "or let the message pass through (leave blank and hit enter)? ";
+    string action;
+    getline(cin, action);
+    if (action == "drop") {
+        cout << "Dropping packet" << endl << endl;
+        return false;
+    }
+    cout << endl;
+    return receiveLinkLayer(myMessage);
 }
 
-void receiveLinkLayer(string outputMessage) {
+bool receiveLinkLayer(string outputMessage) {
     cout << "==== Receiving ====" << endl;
     cout << "[Link Layer] Receiving: " <<  outputMessage << endl;
     size_t p = -1;
@@ -24,5 +34,5 @@ void receiveLinkLayer(string outputMessage) {
     while ((p = outputMessage.find(linkAddon)) != string::npos)
         outputMessage.replace(p, tempAddon.length(), "");
     myMessage = outputMessage;
-    receiveNetworkLayer(myMessage);
+    return receiveNetworkLayer(myMessage);
 }

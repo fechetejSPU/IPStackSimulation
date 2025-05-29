@@ -5,7 +5,7 @@
 using namespace std;
 
 extern string myMessage;
-void sendLinkLayer(string outputMessage);
-void receiveLinkLayer(string outputMessage);
+bool sendLinkLayer(string outputMessage);
+bool receiveLinkLayer(string outputMessage);
 
 #endif //LINK_H

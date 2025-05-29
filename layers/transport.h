@@ -6,6 +6,6 @@ using namespace std;
 
 extern string myMessage;
 void sendTransportLayer(string outputMessage);
-void receiveTransportLayer(string outputMessage);
+bool receiveTransportLayer(string outputMessage);
 
 #endif //TRANSPORT_H
