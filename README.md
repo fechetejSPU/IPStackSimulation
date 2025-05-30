@@ -43,8 +43,6 @@ This allows the program to be built and executed directly from within the VSCode
 
 Our program can be run in a standard way using a terminal of choice (some of us used WSL to run this), or by running the "Build & Run IP Simulation" task in VSCode. 
 
----
-
 ### With Terminal
 
 1. Navigate to the project directory in your terminal.
