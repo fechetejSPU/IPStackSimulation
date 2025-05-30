@@ -1,4 +1,4 @@
-# 💻 Internet Protocol Stack Simulation Assignment
+# Internet Protocol Stack Simulation Assignment
 
 **Project Group 1:** Joshua Fechete, Joyce Tang, and Anthony Scanlon
 
@@ -20,10 +20,10 @@ Our main folder contains:
 - `main.cpp`
 - Two subfolders: `layers/` and `.vscode/`
 
-### 🔹 `main.cpp`  
+###  `main.cpp`  
 Controls our program's actions, including outputting various text, allowing for user input to accept a message, and then calling the application layer to send the message through the stack, simulating the IP stack process. 
 
-### 🔹 `layers/`  
+###  `layers/`  
 Contains 8 files (`.h` and `.cpp` pairs) for:
 - Application Layer
 - Transport Layer
@@ -32,7 +32,7 @@ Contains 8 files (`.h` and `.cpp` pairs) for:
 
 Each layer has `send` and `receive` functions that modify a global `myMessage` string and pass the data through the stack.
 
-### 🔹 `.vscode/`  
+###  `.vscode/`  
 Contains a `tasks.json` file with one task:  
 **"Build & Run IP Simulation"**  
 This allows the program to be built and executed directly from within the VSCode terminal.
